@@ -40,6 +40,18 @@
                 "purchaseUrl" => "wwww.example.com/3"
             ]
         ];
+
+        function filterByAuthor($books) {
+            $filteredBooks = [];
+
+            foreach ($books as $book) {
+                if ($book['author'] === 'Andy Weir'){
+                    $filteredBooks[] = $book;
+                }
+            }
+
+            return $filteredBooks;
+        }
     ?>
 
     <ul>
