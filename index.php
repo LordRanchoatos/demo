@@ -23,17 +23,20 @@
         $books = [
             [
                "name" => "Do Android Dream of Electric Sheep",
+               "releaseYear" => "2007",
                 "author" => "Philip K Dick",
                 "purchaseUrl" => "wwww.example.com/1"
             ],
             [
                 "name" => "The Langoliers",
-                "author" => "Philip K Dick",
+                "releaseYear" => "2021",
+                "author" => "Andy Weir",
                 "purchaseUrl" => "wwww.example.com/2"
             ],
             [
                 "name" => "Hail Mary",
-                "author" => "Philip K Dick",
+                "releaseYear" => "2011",
+                "author" => "Andy Weir",
                 "purchaseUrl" => "wwww.example.com/3"
             ]
         ];
@@ -41,9 +44,11 @@
 
     <ul>
         <?php foreach ($books as $book) : ?>
-            <li>
-                <a href="<?= $book["purchaseUrl"] ?> " ><?= $book['name'] ?></a>
-            </li>
+            <?php if ($book['author'] === "Andy Weir") :?>
+                <li>
+                    <a href="<?= $book["purchaseUrl"] ?> " ><?= $book['name'] ?></a>
+                </li>
+            <?php endif ?>
             <?php endforeach ?>
     </ul>
 </body>
