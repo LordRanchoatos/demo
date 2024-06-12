@@ -21,14 +21,30 @@
     </h1>
     <?php 
         $books = [
-            "Do Android Dream of Electric Sheep",
-            "The Langoliers",
-            "Hail Mary"
+            [
+               "name" => "Do Android Dream of Electric Sheep",
+                "author" => "Philip K Dick",
+                "purchaseUrl" => "wwww.example.com/1"
+            ],
+            [
+                "name" => "The Langoliers",
+                "author" => "Philip K Dick",
+                "purchaseUrl" => "wwww.example.com/2"
+            ],
+            [
+                "name" => "Hail Mary",
+                "author" => "Philip K Dick",
+                "purchaseUrl" => "wwww.example.com/3"
+            ]
         ];
     ?>
 
-    <p>
-        <?= $books[1] ?>
-    </p>
+    <ul>
+        <?php foreach ($books as $book) : ?>
+            <li>
+                <a href="<?= $book["purchaseUrl"] ?> " ><?= $book['name'] ?></a>
+            </li>
+            <?php endforeach ?>
+    </ul>
 </body>
 </html>
