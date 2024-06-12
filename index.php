@@ -55,7 +55,7 @@
     ?>
 
     <ul>
-        <?php foreach ($books as $book) : ?>
+        <?php foreach (filterByAuthor($books) as $book) : ?>
             <?php if ($book['author'] === "Andy Weir") :?>
                 <li>
                     <a href="<?= $book["purchaseUrl"] ?> " ><?= $book['name'] ?></a>
