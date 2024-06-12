@@ -28,10 +28,6 @@
     
     ?>
     <h1>
-        <?php 
-
-            echo $message;
-            ?>
             <!-- thesame as echo -->
             <?= $message; ?> 
     </h1>
