@@ -5,31 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>demo</title>
     <style>
-        body {
+        /* body {
             display: grid;
             place-items: center;
             height: 100vh;
             margins: 0;
             padding: 0;
             font-family: sans-serif;
-        }
+        } */
     </style>
 </head>
 <body>
-    <?php
-    $name = "Dark matter";
-    $read = false;
-    if ($read){
-        $message = "You have read $name";
-    } else {
-        $message = "You not have read $name";
-    }
-    
-    
-    ?>
     <h1>
-            <!-- thesame as echo -->
-            <?= $message; ?> 
+        Recommended Books
     </h1>
+    <?php 
+        $books = [
+            "Do Android Dream of Electric Sheep",
+            "The Langoliers",
+            "Hail Mary"
+        ];
+    ?>
+
+    <ul>
+        <?php foreach ($books as $book){
+            echo "<li>{$book}'</li>";
+        }
+        
+        ?>
+    </ul>
 </body>
 </html>
