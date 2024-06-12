@@ -31,7 +31,9 @@
         <?php 
 
             echo $message;
-        ?>
+            ?>
+            <!-- thesame as echo -->
+            <?= $message; ?> 
     </h1>
 </body>
 </html>
