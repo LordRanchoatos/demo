@@ -53,8 +53,8 @@
             return $filteredItems;
         };
 
-        $filteredBooks = filter($books, function($book){
-            return $book['releaseYear'] < 2000;
+        $filteredBooks = array_filter($books, function($book){
+            return $book['author'] === 'Andy Weir';
         });
     ?>
 
