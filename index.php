@@ -23,7 +23,7 @@
         $books = [
             [
                "name" => "Do Android Dream of Electric Sheep",
-               "releaseYear" => "2007",
+               "releaseYear" => "1994",
                 "author" => "Philip K Dick",
                 "purchaseUrl" => "wwww.example.com/1"
             ],
@@ -41,11 +41,11 @@
             ]
         ];
 
-        function filter ($items, $key, $value) {
+        function filter ($items, $fn) {
             $filteredItems = [];
 
             foreach ($items as $item) {
-                if ($item[$key] === $value){
+                if ($fn($item)){
                     $filteredItems[] = $item;
                 }
             }
@@ -53,7 +53,9 @@
             return $filteredItems;
         };
 
-        $filteredBooks = filter($books, 'releaseYear', '2007');
+        $filteredBooks = filter($books, function($book){
+            return $book['releaseYear'] < 2000;
+        });
     ?>
 
     <ul>
