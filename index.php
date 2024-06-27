@@ -1,6 +1,6 @@
 <?php
 
-    class Customer {
+    abstract class Customer {
         private $id;
         private $name;
         protected $email;
@@ -13,14 +13,15 @@
             $this->balance = $balance;
         }
 
-        public function getEmail(){
-            return $this->email;
-        }
+        abstract public function getEmail();
 
     }
 
 
-    //$customer = new Customer(1, "Dave", "dave@gmail.com", 0);
+    // abstract method must be in an abstract class.
+
+    
+    // $customer = new Customer(1, "Dave", "dave@gmail.com", 0);
 
 
     //echo $customer->getEmail();
@@ -33,9 +34,9 @@
             $this->plan = $plan;
         }
 
-        // public function getEmail(){
-        //     return $this->email;
-        // }
+        public function getEmail(){
+            return $this->email;
+        }
     }
 
     $subscriber = new Subscriber(1, "Dave", "dave@gmail.com", 0, 'Pro');
