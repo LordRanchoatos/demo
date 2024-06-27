@@ -3,7 +3,7 @@
     class Customer {
         private $id;
         private $name;
-        private $email;
+        protected $email;
         private $balance;
         
         public function __construct($id, $name, $email, $balance){
@@ -20,8 +20,26 @@
     }
 
 
-    $customer = new Customer(1, "Dave", "dave@gmail.com", 0);
+    //$customer = new Customer(1, "Dave", "dave@gmail.com", 0);
 
 
-    echo $customer->getEmail();
+    //echo $customer->getEmail();
+
+    class Subscriber extends Customer{
+        public $plan;
+
+        public function __construct($id, $name, $email, $balance, $plan){
+            parent::__construct($id, $name, $email, $balance);
+            $this->plan = $plan;
+        }
+
+        // public function getEmail(){
+        //     return $this->email;
+        // }
+    }
+
+    $subscriber = new Subscriber(1, "Dave", "dave@gmail.com", 0, 'Pro');
+
+    echo $subscriber->getEmail();
+
 ?>
